@@ -21,7 +21,7 @@ const question1 = {
     ["Pablo Picasso", false],
     ["Édouard Manet", false]
   ]
- }
+}
 const question2 = {
   category: "art",
   question: "Where is Picasso's Guernica hanging?",
@@ -32,7 +32,7 @@ const question2 = {
     ["Picasso museum in Barcelona", false],
     ["Prado musseum in Madrid", false]
   ]
- }
+}
 
 const question3 = {
   category: "science",
@@ -44,7 +44,7 @@ const question3 = {
     ["8 minutes", true],
     ["8 seconds", false]
   ]
- }
+}
 
 const question4 = {
   category: "science",
@@ -56,7 +56,7 @@ const question4 = {
     ["Cingulate cortex", false],
     ["Hypothalamus", false]
   ]
- }
+}
  
 const question5= {
   category: "music",
@@ -68,7 +68,7 @@ const question5= {
     ["1988", false],
     ["1990", false]
   ]
- }
+}
 
  const question6= {
   category: "music",
@@ -80,7 +80,7 @@ const question5= {
     ["Sebastian Bach", false],
     ["Amadeus Mozart", true]
   ]
- }
+}
 
 const question7= {
   category: "animals",
@@ -92,7 +92,7 @@ const question7= {
     ["Chinstrap", false],
     ["Macaroni", false]
   ]
- }
+}
 
 const question8= {
   category: "animals",
@@ -104,7 +104,7 @@ const question8= {
     ["White Rhinoceros", false],
     ["Blue wale", true]
   ]
- }
+}
 
 const question9= {
   category: "geography",
@@ -116,7 +116,7 @@ const question9= {
     ["Chile", true],
     ["Bolivia", false]
   ]
- }
+}
 
 const question10= {
   category: "geography",
@@ -128,7 +128,7 @@ const question10= {
     ["Algeria", false],
     ["Sudan", true]
   ]
- }
+}
 
  const question11= {
   category: "history",
@@ -250,6 +250,7 @@ const question20= {
   ]
 }
 
+
 const allQuestions = [question1,question2,question3,question4,question5,question6,question7,question8,question9,question10,question11,question12,question13,question14,question15,question16,question17,question18,question19,question20]
 
 const artQuestions = allQuestions.filter((element) => element.category.includes("art"))
@@ -263,18 +264,21 @@ const climateQuestions = allQuestions.filter((element) => element.category.inclu
 const cinemaQuestions = allQuestions.filter((element) => element.category.includes("cinema"))
 const literatureQuestions = allQuestions.filter((element) => element.category.includes("literature"))
 
-let tenQuestions = []
-tenQuestions.push(artQuestions[Math.floor(Math.random() *  artQuestions.length)]) 
-tenQuestions.push(scienceQuestions[Math.floor(Math.random() *  scienceQuestions.length)])
-tenQuestions.push(musicQuestions[Math.floor(Math.random() *  musicQuestions.length)])
-tenQuestions.push(animalsQuestions[Math.floor(Math.random() *  animalsQuestions.length)])
-tenQuestions.push(geographyQuestions[Math.floor(Math.random() *  geographyQuestions.length)])
-tenQuestions.push(historyQuestions[Math.floor(Math.random() *  historyQuestions.length)])
-tenQuestions.push(foodQuestions[Math.floor(Math.random() *  foodQuestions.length)])
-tenQuestions.push(climateQuestions[Math.floor(Math.random() *  climateQuestions.length)])
-tenQuestions.push(cinemaQuestions[Math.floor(Math.random() *  cinemaQuestions.length)])
-tenQuestions.push(literatureQuestions[Math.floor(Math.random() *  literatureQuestions.length)])
 
+function createRandomQ(){
+  let tenQuestions = []
+  tenQuestions.push(artQuestions[Math.floor(Math.random() *  artQuestions.length)]) 
+  tenQuestions.push(scienceQuestions[Math.floor(Math.random() *  scienceQuestions.length)])
+  tenQuestions.push(musicQuestions[Math.floor(Math.random() *  musicQuestions.length)])
+  tenQuestions.push(animalsQuestions[Math.floor(Math.random() *  animalsQuestions.length)])
+  tenQuestions.push(geographyQuestions[Math.floor(Math.random() *  geographyQuestions.length)])
+  tenQuestions.push(historyQuestions[Math.floor(Math.random() *  historyQuestions.length)])
+  tenQuestions.push(foodQuestions[Math.floor(Math.random() *  foodQuestions.length)])
+  tenQuestions.push(climateQuestions[Math.floor(Math.random() *  climateQuestions.length)])
+  tenQuestions.push(cinemaQuestions[Math.floor(Math.random() *  cinemaQuestions.length)])
+  tenQuestions.push(literatureQuestions[Math.floor(Math.random() *  literatureQuestions.length)])
+  return tenQuestions
+}
 
 
 const score_modal = document.getElementById("score-modal")
@@ -292,6 +296,8 @@ const rightAnswers = document.getElementById("right-answers")
 
 const nextQuestion = document.getElementById("next")
 const previousQuestion = document.getElementById("previous")
+const playAgain = document.getElementById("playAgain")
+const play = document.getElementById("play-again")
 
 optArr = options.querySelectorAll("button")
 
@@ -305,101 +311,124 @@ window.onload = () => {
     question.classList.add("hidden")
     options.classList.add("hidden")
     score.classList.add("hidden")
+    play.classList.add("hidden")
     document.getElementById('start-button').onclick = () => {
+      var audio = new Audio('Carousel.mp3');
+      audio.play();
       startGame();
     }
 };
    
 function startGame(){
-    
-    
-    numQuestion.innerHTML = count + 1;
-    if (count === 0) {
-      quiz_container.classList.remove("hidden")
-      game_intro.classList.add("hidden")
-      question.classList.remove("hidden")
-      score.classList.remove("hidden")
-      options.classList.remove("hidden")
-    }
+  let tenQuestions= createRandomQ()
+  numQuestion.innerHTML = count + 1;
+  if (count === 0) {
+    quiz_container.classList.remove("hidden")
+    game_intro.classList.add("hidden")
+    question.classList.remove("hidden")
+    score.classList.remove("hidden")
+    options.classList.remove("hidden")
+  }
 
-    if (count < 10) {
-      videoDiv.innerHTML= tenQuestions[count].background
-      question.textContent = tenQuestions[count].question
+  if (count < 10) {
+    videoDiv.innerHTML= tenQuestions[count].background
+    question.textContent = tenQuestions[count].question
 
-      optArr.forEach( (el, index) => {
-        el.textContent = tenQuestions[count].options[index][0]
-        el.addEventListener( 'click', () => {
-          if (tenQuestions[count].options[index][1]) {
-            found = 1;
-            if (tries === 0){
+    optArr.forEach( (el, index) => {
+      el.textContent = tenQuestions[count].options[index][0]
+      el.addEventListener( 'click', () => {
+        if (tenQuestions[count].options[index][1]) {
+          found = 1;
+          if (tries === 0){
               points++
               scoreNum.innerHTML= points
               tries =1
-            }
-            el.classList.add('mystyleR')
-            el.textContent= "CORRECT ANSWER !"
-            
-            
-          } else {
-            tries = 1
-            el.textContent= "WRONG ANSWER !"
-            el.classList.add('mystyleW')
-            el.style.color = 'rgb(214, 82, 64)';
           }
-        })
+        el.classList.add('mystyleR')
+        el.textContent= "CORRECT ANSWER !"
+            
+        } else {
+          tries = 1
+          el.textContent= "WRONG ANSWER !"
+          el.classList.add('mystyleW')
+          el.style.color = 'rgb(214, 82, 64)';
+        }
       })
-    }
+    })
   }
+}
 
-  function endGame(){
-    videoDiv.innerHTML = video12
-    score_modal.classList.remove("hidden")
+function endGame(){
+  videoDiv.innerHTML = video12
+  score_modal.classList.remove("hidden")
+  quiz_container.classList.add("hidden")
+  question.classList.add("hidden")
+  options.classList.add("hidden")
+  score.classList.add("hidden")
+  play.classList.remove("hidden")
+  
+  wrongAnswers.innerHTML= 10 - points
+  rightAnswers.innerHTML = points
+
+  playAgain.addEventListener('click', () => {
+    play.classList.add("hidden")
+    score_modal.classList.add("hidden")
+    points = 0;
+    tries = 0;
+    count = 0;
+    videoDiv.innerHTML = video1
     quiz_container.classList.add("hidden")
+    score_modal.classList.add("hidden")
     question.classList.add("hidden")
     options.classList.add("hidden")
     score.classList.add("hidden")
-  
-    wrongAnswers.innerHTML= 10 - points
-    rightAnswers.innerHTML = points
-  }
-  
-    nextQuestion.addEventListener('click', () => {
+    play.classList.add("hidden")
+    game_intro.classList.remove("hidden")
 
-      count ++
-      optArr.forEach( (el, index) => {
-        el.classList.remove('mystyleW')
-        el.classList.remove('mystyleR')
-        el.style.color = 'white';
-      })
-      setTimeout(() => {
-         if (count < 10){
-          tries =0;
-          startGame()
-        }
-        else {
-          endGame()
-        }
+    document.getElementById('start-button').onclick = () => {
+      var audio = new Audio('Carousel.mp3');
+      audio.play();  
+      startGame()
+    }
+  })
+}
+
+nextQuestion.addEventListener('click', () => {
+  count ++
+  optArr.forEach( (el, index) => {
+    el.classList.remove('mystyleW')
+    el.classList.remove('mystyleR')
+    el.style.color = 'white';
+  })
     
-      },600)
-    })
+  setTimeout(() => {
+    if (count < 10){
+      tries =0;
+      startGame()
+    }
+    else {
+      endGame()
+    }
+  },600)
+})
 
-      previousQuestion.addEventListener('click', () => {
-        tries = 1;
-        if (count > 0){
-          count --
-          optArr.forEach( (el, index) => {
-          el.classList.remove('mystyleW')
-          el.classList.remove('mystyleR')
-          el.style.color = 'white';
-          })
-        setTimeout(() => {
-           if (count < 10){
-            startGame()
-          }
-          else {
-            endGame()
-          }
-         },600)
-        }
-      })
+previousQuestion.addEventListener('click', () => {
+  tries = 1;
+  if (count > 0){
+    count --
+    optArr.forEach( (el, index) => {
+      el.classList.remove('mystyleW')
+      el.classList.remove('mystyleR')
+      el.style.color = 'white';
+    })
+    setTimeout(() => {
+      if (count < 10){
+        startGame()
+      }
+      else {
+        endGame()
+      }
+    },600)
+  }
+})
   

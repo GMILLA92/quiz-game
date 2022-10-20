@@ -13,64 +13,60 @@
       <!-- <video id="background-video" autoplay loop muted > <source src="img/waves.mp4" type="video/mp4">
       </video> -->
     </div>
-
+    
     <div id="score-modal">
-        <div id ="modal-content-container">
-          <h1>Quiz completed!</h1>
+      <div id ="modal-content-container">
+        <h1>Quiz completed!</h1>
 
-          <div id="grade-details">
-            <p>Wrong Answers: <span id="wrong-answers"></span></p>
-            <p>Right Answers: <span id="right-answers"></span></p>
-          </div>
+        <div id="grade-details">
+          <p>Wrong Answers: <span id="wrong-answers"></span></p>
+          <p>Right Answers: <span id="right-answers"></span></p>
+        </div>
+
       </div>
     </div>
 
     <div id="game-intro">
-        <h1> Quiz Game </h1>
-        <button id="start-button">Start Game</button>
+      <h1> Quiz Game </h1>
+      <button id="start-button">Start Game</button>
     </div>
 
     <div id="game-quiz-container">
-        <div id="game-details-container">
-          <h2>Score: <span id="game_score">0</span> / 10</h2>
-          <h2>Question: <span id="q-number">1</span> / 10</h2>
+      <div id="game-details-container">
+        <h2>Score: <span id="game_score">0</span> / 10</h2>
+        <h2>Question: <span id="q-number">1</span> / 10</h2>
+      </div>
+        
+      <div id="main-container">
+        <div id="game-question-container">
         </div>
-        <div id="main-container">
-          <div id="game-question-container">
-
+        <div id="game-options-container">
+          <div id="section1">
+            <button id="answer1" class="button"></button>
+            <button id="answer2" class="button"></button>
           </div>
-
-          <div id="game-options-container">
-            <div id="section1">
-              <button id="answer1" class="button"></button>
-              <button id="answer2" class="button"></button>
-            </div>
-            <div id="section2">
-              <button id="answer3" class="button"></button>
-              <button id="answer4" class="button"></button>
-            </div>
-           
+          <div id="section2">
+            <button id="answer3" class="button"></button>
+            <button id="answer4" class="button"></button>
           </div>
-
         </div>
+      </div>
 
-        <div id="previous-next">
-          <div id="next-button-container">
-              <button id="next"> NEXT QUESTION </button>
-          </div>
+      <div id="previous-next">
+        <div id="next-button-container">
+          <button id="next"> NEXT QUESTION </button>
+        </div>
       
-          <div id="previous-button-container">
-            <button id="previous"> PREVIOUS QUESTION </button>
-          </div>
+        <div id="previous-button-container">
+          <button id="previous"> PREVIOUS QUESTION </button>
         </div>
-
       </div>
 
     </div>
 
-   
-    
-  
+    <div id="play-again">
+      <button id="playAgain"> PLAY AGAIN! </button>
+    </div>
 
     <script type="text/javascript" src="src/index.js"></script>
   </body>
