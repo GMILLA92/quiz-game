@@ -1,0 +1,475 @@
+ body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+} 
+
+#background-video1{
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+#background-video2{
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  filter: hue-rotate(30deg);
+}
+#background-video3{
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  filter: hue-rotate(270deg);
+  }
+
+#game-intro{
+  width: 100%;
+  height:100%;
+}
+
+h1{
+    font-size: 80px;
+    color: white;
+    text-align: center;
+    font-family:'Gill Sans';
+} 
+
+#start-button {
+  font-size: 40px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #3F7B8A ;
+  color: white;
+  border: 5px ;
+  padding: 20px 20px 20px 20px;
+  border-radius: 40px;
+  position: absolute;
+  bottom: 10px;
+  right: 40px;
+  animation: wiggle 2s linear infinite;
+}
+
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
+
+
+#start-button:hover{
+  background-color: rgb(220, 93, 135);
+}
+
+
+#game-quiz-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  margin:auto;
+}
+
+#game-details-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;  
+}
+
+#main-container{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h2{
+  font-size: 20px;
+  color: black;
+  background-color: #c1c6c7;
+  border: 5px solid rgb(159, 71, 159);
+  border-radius: 10px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: fit-content;
+  padding: 5px 10px 5px 10px
+}
+
+#game-question-container {
+  font-size: 30px;
+  color: white;
+  background-color: black;
+  border-radius: 30px;
+  border: 0px;
+  padding: 20px 30px 25px 30px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 30px auto;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#game-options-container{
+  width: 100%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+
+#section1{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+#section2{
+  width: 100%;
+  display: flex;
+  justify-content:  space-between;
+  padding: 20px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.button{
+  font-size: 30px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: rgb(129, 179, 196) ;
+  color: white;
+  border: 5px ;
+  margin-left: 5px;
+  padding: 5x 3px 5px 3px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s ease-in;
+  border-radius: 5px;
+}
+
+.button:hover{
+  -webkit-transform: scale(1..5);
+  -moz-tranform: scale(1..5);
+  -ms-transform: scale(1..5);
+  -o-transform: scale(1..5);
+  transform: scale(1.5);
+  background-color: rgb(243, 213, 106);
+}
+
+
+.mystyleW {
+  background-color: rgb(214, 82, 64);
+  
+  -webkit-animation-name: example2;
+    -webkit-animation-duration: 2000ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+
+    -moz-animation-name: example2;
+    -moz-animation-duration: 2000ms;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: linear;
+
+    -ms-animation-name: example2;
+    -ms-animation-duration: 2000ms;
+    -ms-animation-iteration-count: 1;
+    -ms-animation-timing-function: linear;
+
+    animation-name: example2;
+    animation-duration: 2000ms;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+  /* -webkit-transform: rotate(-180deg);
+  animation-duration: 3s;
+  animation-iteration-count: 1; */
+
+@keyframes example2 {
+  0%   {background-color:rgb(219, 200, 92);}
+  25%  {background-color:rgb(192, 147, 57);}
+  50%  {background-color:rgb(202, 151, 49);}
+  75%  {background-color:rgb(225, 119, 33);}
+  100% {background-color:rgb(214, 82, 64);}
+
+    from { 
+      transform: rotate(0deg); 
+  } to { 
+      transform: rotateY(180deg); 
+  }
+}
+
+@-ms-keyframes example2 { 
+  from { 
+      -ms-transform: rotate(0deg); 
+  } to { 
+      -ms-transform: rotateY(180deg); 
+  }
+}
+@-moz-keyframes example2 { 
+  from { 
+      -moz-transform: rotate(0deg); 
+  } to { 
+      -moz-transform: rotateY(180deg); 
+  }
+}
+@-webkit-keyframes example2 { 
+  from { 
+      -webkit-transform: rotate(0deg); 
+  } to { 
+      -webkit-transform: rotateY(180deg); 
+  }
+}
+
+
+
+@keyframes example {
+  0%   {background-color:rgb(115, 176, 157);}
+  25%  {background-color:rgb(98, 152, 127);}
+  50%  {background-color:rgb(116, 158, 130);}
+  75%  {background-color:rgb(118, 183, 118);}
+  100% {background-color:rgb(151, 197, 83);}
+}
+
+
+
+
+.mystyleR{
+  background-color: rgb(151, 197, 83);
+  animation-name: example;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+#next-button-container{
+  display: flex;
+  justify-content: center;
+}
+
+#next{
+  font-size: 20px;
+  color: black;
+  background-color: #c1c6c7;
+  border: 5px solid rgb(159, 71, 159);
+  border-radius: 10px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: fit-content;
+  padding: 5px 10px 5px 10px;
+  margin-left: auto;
+  margin-bottom: 10px;
+}
+
+#next:hover{
+  background-color: rgb(243, 213, 106);
+}
+
+
+
+#previous-button-container{
+  display: flex;
+  justify-content: center;
+}
+
+#previous{
+  font-size: 20px;
+  color: black;
+  background-color: #c1c6c7;
+  border: 5px solid rgb(159, 71, 159);
+  border-radius: 10px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: fit-content;
+  padding: 5px 10px 5px 10px;
+  margin-left: auto;
+  margin-bottom: 10px;
+}
+
+#previous:hover{
+  background-color: rgb(243, 213, 106);
+}
+
+#previous-next{
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-content: center;
+  justify-content: space-between;
+}
+
+
+#score-modal{
+  width: 100%;
+  height: 100%;
+}
+#modal-content-container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: center;
+  
+}
+
+#modal-content-container h1 {
+  font-size: 40px;
+  text-align: center;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+ }
+
+
+#grade-details{
+  width: 100%;
+  display: flex;
+  font-size: 40px;
+  color: rgb(21, 21, 23);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  flex-direction: column;
+  align-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+#grade-details p{
+  display: flex;
+  text-align:center;
+  justify-content: space-between;
+  height: 90px;
+}
+
+
+.hidden{
+  display: none !important;
+}
+@media(min-width : 300px) and (max-width : 400px){
+ 
+   #start-button {
+    font-size: 35px;
+    bottom: 53px;
+   }
+
+   h1{
+      font-size: 80px;
+      padding: 67px;
+   }
+
+   h2{
+    font-size:16px;
+   }
+
+   #game-question-container{
+   
+      font-size: 25px;
+   }
+   
+  #game-options-container{
+      font-size: 25px;
+  }
+   
+ 
+  #game-details-container{
+    padding: 17px;
+  }
+
+  #modal-content-container h1{
+      font-size: 40px;
+      padding: 9px;
+  }
+
+  #next, #previous{
+    font-size: 14px;
+  }
+ 
+element.style {
+    color: rgb(214, 82, 64);
+}
+
+.button {
+    font-size: 25px;
+    padding: 5px;
+}
+.mystyleW {
+    background-color: rgb(214, 82, 64);
+    animation-name: example2;
+    animation-duration: 1000ms;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+  
+.button:hover{
+  transform: rotateY(360deg);
+}
+
+@keyframes example2 {
+  0%   {background-color:rgb(219, 200, 92);}
+  25%  {background-color:rgb(192, 147, 57);}
+  50%  {background-color:rgb(202, 151, 49);}
+  75%  {background-color:rgb(225, 119, 33);}
+  100% {background-color:rgb(214, 82, 64);}
+}
+
+
+@keyframes example {
+  0%   {background-color:rgb(115, 176, 157);}
+  25%  {background-color:rgb(98, 152, 127);}
+  50%  {background-color:rgb(116, 158, 130);}
+  75%  {background-color:rgb(118, 183, 118);}
+  100% {background-color:rgb(151, 197, 83);}
+}
+
+#next:hover{
+  background-color: #c1c6c7;
+
+}
+}
